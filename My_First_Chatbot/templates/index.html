@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>📄 PDF Chatbot</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="pdf">
+            <button type="submit">Upload PDF</button>
+        </form>
+
+        <div class="info">
+            <p>Upload a PDF and start asking questions.</p>
+        </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+
+        <div class="header">
+            <h1>My First Chatbot</h1>
+        </div>
+
+        <div class="chat-box">
+
+            {% if history %}
+                {% for chat in history %}
+
+                <div class="user-msg">
+                    <strong>You:</strong><br>
+                    {{ chat.question }}
+                </div>
+
+                <div class="bot-msg">
+                    <strong>Bot:</strong><br>
+                    {{ chat.answer }}
+                </div>
+
+                {% endfor %}
+            {% else %}
+                <div class="welcome">
+                    👋 Welcome! Upload a PDF and ask questions.
+                </div>
+            {% endif %}
+
+        </div>
+
+        <form method="POST" class="question-form">
+            <input
+                type="text"
+                name="question"
+                placeholder="Ask something from your PDF..."
+                required>
+
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+const chatBox = document.querySelector(".chat-box");
+chatBox.scrollTop = chatBox.scrollHeight;
+</script>
+
+</body>
+</html>
