@@ -139,3 +139,7 @@ Through this project, the following concepts were explored:
 ## Conclusion
 
 This project successfully demonstrates the integration of Generative AI with document processing to create an intelligent PDF Question Answering Chatbot. By leveraging Ollama and the Llama 3.2 model, the application provides an efficient and cost-effective solution for interacting with document content while running entirely on a local machine.
+
+## Author
+
+Prithiga-tech
