@@ -113,6 +113,9 @@ Open the application in your browser:
 http://127.0.0.1:5000
 ```
 
+## Sample Images
+<img width="1912" height="915" alt="image" src="https://github.com/user-attachments/assets/61a4a928-b92e-416f-867d-959846e8582f" />
+
 ## Learning Outcomes
 
 Through this project, the following concepts were explored:
